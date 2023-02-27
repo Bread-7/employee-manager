@@ -1,34 +1,51 @@
 import qrcode
-from flask import Flask, request
-import pyzbar.pyzbar as pyzbar
+
+# Define the Python script as a data URI
+python_script = "data:text/python," + """
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+import time
 
-app = Flask(__name__)
+# Define the path to the ChromeDriver executable
+chrome_driver_path = "C:/Program Files/Google/Chrome/Application"
 
-@app.route('/')
-def index():
-    qr = qrcode.QRCode(version=1, box_size=10, border=4)
-    qr.add_data('https://bread-7.github.io')
-    qr.make(fit=True)
-    qr_img = qr.make_image(fill_color='black', back_color='white')
-    qr_img.save('qr.png')
-    return '<img src="/qr.png">'
+# Start a new Chrome browser instance
+driver = webdriver.Chrome(chrome_driver_path)
 
-@app.route('/')
-def execute():
-    # Step 2: Parse the data
-    qr_data_str = request.args.get('data') # assuming the QR code data is passed as a query parameter
+# Navigate to the website where you want to autofill fields
+driver.get("https://bread-7.github.io")
 
-    # Step 3: Fill in the fields
-    driver = webdriver.Chrome() # or any other browser driver you prefer
-    driver.get('https://bread-7.github.io') # replace with the URL of the website you want to interact with
-    field = driver.find_element_by_name('fname') # replace 'fieldname' with the name or ID of the input field you want to fill in
-    field.send_keys(qr_data_str) # fill in the field with the QR code data
+# Wait for the page to load
+time.sleep(2)
 
-    # Step 4: Submit the form
-    submit_button = driver.find_element_by_xpath('//button[@type="submit"]') # assuming the submit button has a 'type' attribute set to 'submit'
-    submit_button.click() # submit the form
+# Scan the QR code using a mobile device or a dedicated QR code scanner
+# Extract the data from the QR code and parse it to extract relevant information
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# Fill in the appropriate fields on the website with the extracted data
+name_field = driver.find_element_by_id("name_field")
+name_field.send_keys("John Doe")
+
+email_field = driver.find_element_by_id("email_field")
+email_field.send_keys("john.doe@example.com")
+
+phone_field = driver.find_element_by_id("phone_field")
+phone_field.send_keys("555-1234")
+
+# Submit the form
+submit_button = driver.find_element_by_id("submit_button")
+submit_button.click()
+
+# Wait for the page to load after submitting the form
+time.sleep(2)
+
+# Close the browser window
+driver.quit()
+"""
+
+# Generate a QR code containing the data URI
+qr = qrcode.QRCode(version=1, box_size=10, border=4)
+qr.add_data(python_script)
+qr.make(fit=True)
+
+# Save the QR code as an image file
+img = qr.make_image(fill_color="black", back_color="white")
+img.save("qr_code.png").
