@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     qr = qrcode.QRCode(version=1, box_size=10, border=4)
-    qr.add_data('http://localhost:5000/execute')
+    qr.add_data('https://bread-7.github.io')
     qr.make(fit=True)
     qr_img = qr.make_image(fill_color='black', back_color='white')
     qr_img.save('qr.png')
@@ -22,7 +22,7 @@ def execute():
 
     # Step 3: Fill in the fields
     driver = webdriver.Chrome() # or any other browser driver you prefer
-    driver.get('https://www.bread-7.github.io') # replace with the URL of the website you want to interact with
+    driver.get('https://bread-7.github.io') # replace with the URL of the website you want to interact with
     field = driver.find_element_by_name('fname') # replace 'fieldname' with the name or ID of the input field you want to fill in
     field.send_keys(qr_data_str) # fill in the field with the QR code data
 
