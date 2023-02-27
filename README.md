@@ -15,6 +15,7 @@ Click me to display Date and Time.</button>
 
 <p id="demo"></p>
 
-<script type = "module">
-  
+<script>
+  import cube from '/scripts.js'
+  document.write(cube(3))
 </script>

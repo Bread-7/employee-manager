@@ -1,1 +1,3 @@
-console.log(5)
+export default function cube(x){
+    return x**3
+}
