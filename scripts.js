@@ -1,3 +1,3 @@
-export default function cube(x){
+export function cube(x){
     return x**3
 }
