@@ -21,14 +21,11 @@ time.sleep(2)
 # Extract the data from the QR code and parse it to extract relevant information
 
 # Fill in the appropriate fields on the website with the extracted data
-name_field = driver.find_element_by_id("name_field")
+name_field = driver.find_element_by_id("fname")
 name_field.send_keys("John Doe")
 
-email_field = driver.find_element_by_id("email_field")
+email_field = driver.find_element_by_id("lname")
 email_field.send_keys("john.doe@example.com")
-
-phone_field = driver.find_element_by_id("phone_field")
-phone_field.send_keys("555-1234")
 
 # Submit the form
 submit_button = driver.find_element_by_id("submit_button")
@@ -48,4 +45,7 @@ qr.make(fit=True)
 
 # Save the QR code as an image file
 img = qr.make_image(fill_color="black", back_color="white")
-img.save("qr_code.png").
+img.save("qr_code.png")
+
+# phone_field = driver.find_element_by_id("phone_field")
+# phone_field.send_keys("555-1234")
