@@ -15,7 +15,7 @@ def index():
     qr_img.save('qr.png')
     return '<img src="/qr.png">'
 
-@app.route('/execute')
+@app.route('/')
 def execute():
     # Step 2: Parse the data
     qr_data_str = request.args.get('data') # assuming the QR code data is passed as a query parameter
