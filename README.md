@@ -16,6 +16,6 @@ Click me to display Date and Time.</button>
 <p id="demo"></p>
 
 <script type = "module">
-  import cube from '/scripts.js'
-  console.log(cube(3))
+  import square from '/scripts.js'
+  console.log(square(3))
 </script>
