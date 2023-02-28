@@ -11,19 +11,19 @@ Here is some text with an <span style="color:blue">inline blue text</span>.
 <script type="text/javascript" src="scripts.js"></script>
 <script>
   function setStorage(){
-    let key = document.getElementById("fname").value
-    localStorage.setItem('Keys', 'val')
-    localStorage.setItem(key, 'val')
-    console.log(5)
     const json = { "example": "data" }; // replace with your own JSON data
     const jsonStr = JSON.stringify(json);
-    const dataUri = "data:application/json;charset=utf-8," + encodeURIComponent(jsonStr);
+    const blob = new Blob([jsonStr], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
     const downloadLink = document.createElement("a");
-    downloadLink.setAttribute("href", dataUri);
+    downloadLink.setAttribute("href", url);
     downloadLink.setAttribute("download", "example.json"); // replace with your desired filename
     document.body.appendChild(downloadLink);
-    downloadLink.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+    downloadLink.click();
     document.body.removeChild(downloadLink);
+
+    URL.revokeObjectURL(url); // clean up the blob URL when done
   }
 </script>
 <!-- <script type = "module">
