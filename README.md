@@ -9,13 +9,6 @@ Here is some text with an <span style="color:blue">inline blue text</span>.
   
 </div>
 
-<script>
-  function setStorate(){
-    let key = document.getElelmentByID('fname').value
-    localStorage.setItem(key, 'val')
-  }
-</script>
-
 <button type="button"
 onclick="document.getElementById('demo').innerHTML = Date()">
 Click me to display Date and Time.</button>
@@ -25,11 +18,16 @@ Click me to display Date and Time.</button>
 <label for="fname">First name:</label>
 <input type="text" id="fname" name="fname"><br><br>
 <input type="text" id="lname" name="lname"><br><br>
-<input type="submit" id="submit" value="Submit" onclick="setStorage()">
+<input type="submit" id="submit" value="Submit"/>
 
 <script type = "module">
   import cube from '/scripts.js'
   console.log(cube(3))
+  function setStorate(){
+    let key = document.getElelmentByID('fname').value
+    localStorage.setItem(key, 'val')
+  }
+  document.getElementById('submit').onClick = setStorage();
 </script>
 
 
