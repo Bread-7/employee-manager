@@ -18,18 +18,17 @@ Click me to display Date and Time.</button>
 <label for="fname">First name:</label>
 <input type="text" id="fname" name="fname"><br><br>
 <input type="text" id="lname" name="lname"><br><br>
-<input type="submit" id="submit" value="Submit"/>
+<input type="button" id="submit" value="Submit" onclick="setStorage();" />
 
 <script type = "module">
   import cube from '/scripts.js'
   console.log(cube(3))
   function setStorage(){
-    let key = document.getElementById('fname').value
+    let key = document.getElementById("fname").value
     localStorage.setItem('Keys', 'val')
     localStorage.setItem(key, 'val')
     console.log(5)
   }
-  document.getElementById('submit').onclick = setStorage();
 </script>
 
 
