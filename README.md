@@ -18,14 +18,14 @@ Click me to display Date and Time.</button>
 <label for="fname">First name:</label>
 <input type="text" id="fname" name="fname"><br><br>
 <input type="text" id="lname" name="lname"><br><br>
-<input type="submit" id="submit" value="Submit">
+<input type="submit" id="submit" value="Submit" onclick="localStorage.setItem('key', 'val')">
 
 <script type = "module">
   import square from '/scripts.js'
   console.log(square(3))
 </script>
 
-<button onclick="runPython()">Run Python</button>
+<!-- <button onclick="runPython()">Run Python</button>
   <script>
     function runPython() {
       // Make an AJAX request to a Python script
@@ -33,4 +33,4 @@ Click me to display Date and Time.</button>
       xhr.open("GET", "index.py", true);
       xhr.send();
     }
-  </script>
+  </script> -->
