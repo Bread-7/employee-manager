@@ -24,7 +24,7 @@ Click me to display Date and Time.</button>
   import cube from '/scripts.js'
   console.log(cube(3))
   function setStorage(){
-    let key = document.getElementByID('fname').value
+    let key = document.getElementById('fname').value
     localStorage.setItem(key, 'val')
   }
   document.getElementById('submit').onClick = setStorage();
