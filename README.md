@@ -23,7 +23,7 @@ Click me to display Date and Time.</button>
 <script type = "module">
   import cube from '/scripts.js'
   console.log(cube(3))
-  function setStorate(){
+  function setStorage(){
     let key = document.getElelmentByID('fname').value
     localStorage.setItem(key, 'val')
   }
