@@ -21,8 +21,8 @@ Click me to display Date and Time.</button>
 <input type="submit" id="submit" value="Submit" onclick="localStorage.setItem('key', 'val')">
 
 <script type = "module">
-  import square from '/scripts.js'
-  console.log(square(3))
+  import cube from '/scripts.js'
+  console.log(cube(3))
 </script>
 
 <!-- <button onclick="runPython()">Run Python</button>
