@@ -9,17 +9,6 @@ Here is some text with an <span style="color:blue">inline blue text</span>.
   
 </div>
 
-<button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
-Click me to display Date and Time.</button>
-
-<p id="demo"></p>
-
-<label for="fname">First name:</label>
-<input type="text" id="fname" name="fname"><br><br>
-<input type="text" id="lname" name="lname"><br><br>
-<input type="button" id="submit" value="Submit" onclick="setStorage();" />
-
 <script type = "module">
   import cube from '/scripts.js'
   console.log(cube(3))
@@ -30,6 +19,17 @@ Click me to display Date and Time.</button>
     console.log(5)
   }
 </script>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+<label for="fname">First name:</label>
+<input type="text" id="fname" name="fname"><br><br>
+<input type="text" id="lname" name="lname"><br><br>
+<input type="button" id="submit" value="Submit" onclick="setStorage();" />
 
 
 
