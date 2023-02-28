@@ -17,11 +17,11 @@ Here is some text with an <span style="color:blue">inline blue text</span>.
     console.log(5)
   }
 </script>
-<script type = "module">
+<!-- <script type = "module">
   import cube from '/scripts.js'
   console.log(cube(3))
   
-</script>
+</script> -->
 
 <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
 Click me to display Date and Time.</button>
