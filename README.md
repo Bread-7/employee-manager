@@ -18,7 +18,7 @@ Click me to display Date and Time.</button>
 <label for="fname">First name:</label>
 <input type="text" id="fname" name="fname"><br><br>
 <input type="text" id="lname" name="lname"><br><br>
-<input type="submit" id="submit_button" value="Submit">
+<input type="submit" id="submit" value="Submit">
 
 <script type = "module">
   import square from '/scripts.js'
