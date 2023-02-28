@@ -15,6 +15,15 @@ Here is some text with an <span style="color:blue">inline blue text</span>.
     localStorage.setItem('Keys', 'val')
     localStorage.setItem(key, 'val')
     console.log(5)
+    const json = { "example": "data" }; // replace with your own JSON data
+    const jsonStr = JSON.stringify(json);
+    const dataUri = "data:application/json;charset=utf-8," + encodeURIComponent(jsonStr);
+    const downloadLink = document.createElement("a");
+    downloadLink.setAttribute("href", dataUri);
+    downloadLink.setAttribute("download", "example.json"); // replace with your desired filename
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
   }
 </script>
 <!-- <script type = "module">
