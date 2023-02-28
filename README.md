@@ -9,6 +9,13 @@ Here is some text with an <span style="color:blue">inline blue text</span>.
   
 </div>
 
+<script>
+  function setStorate(){
+    let key = document.getElelmentByID('fname').value
+    localStorage.setItem(key, 'val')
+  }
+</script>
+
 <button type="button"
 onclick="document.getElementById('demo').innerHTML = Date()">
 Click me to display Date and Time.</button>
@@ -25,12 +32,7 @@ Click me to display Date and Time.</button>
   console.log(cube(3))
 </script>
 
-<script>
-  function setStorate(){
-    let key = document.getElelmentByID('fname').value
-    localStorage.setItem(key, 'val')
-  }
-</script>
+
 
 <!-- <button onclick="runPython()">Run Python</button>
   <script>
