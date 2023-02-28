@@ -29,7 +29,7 @@ Click me to display Date and Time.</button>
     localStorage.setItem(key, 'val')
     console.log(5)
   }
-  document.getElementById('submit').onClick = setStorage();
+  document.getElementById('submit').onclick = setStorage();
 </script>
 
 
