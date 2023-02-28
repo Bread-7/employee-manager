@@ -18,7 +18,7 @@ Click me to display Date and Time.</button>
 <label for="fname">First name:</label>
 <input type="text" id="fname" name="fname"><br><br>
 <input type="text" id="lname" name="lname"><br><br>
-<input type="submit" id="submit" value="Submit" onclick="localStorage.setItem(document.getElelmentByID('fname').getValue(), 'val')">
+<input type="submit" id="submit" value="Submit" onclick="localStorage.setItem(document.getElelmentByID('fname').value, 'val')">
 
 <script type = "module">
   import cube from '/scripts.js'
