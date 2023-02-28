@@ -22,7 +22,7 @@ Here is some text with an <span style="color:blue">inline blue text</span>.
     downloadLink.setAttribute("href", dataUri);
     downloadLink.setAttribute("download", "example.json"); // replace with your desired filename
     document.body.appendChild(downloadLink);
-    downloadLink.click();
+    downloadLink.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
     document.body.removeChild(downloadLink);
   }
 </script>
