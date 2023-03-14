@@ -182,13 +182,14 @@ function scancount() {
     if(empKey){
         var emp = employeesJSON[empKey];
         var today = new Date();
+        console.log(today)
         var dd = String(today.getDate()).padStart(2, '0');
         var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
         var yyyy = today.getFullYear();
         todate = mm + '/' + dd + '/' + yyyy;
         var new_date = 'scan_'+generateRandom(1,1000,50);
         console.log(new_date, typeof new_date);
-        emp[new_date] = today;
+        emp[new_date] = today.getTime();
         console.log(employeesJSON[empKey]);
         localStorage.setItem('employees', JSON.stringify(employeesJSON));
         window.location = `http://bread-7.github.io/?employees=${emp['firstName']}_${emp['lastName']}`;
