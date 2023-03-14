@@ -187,6 +187,7 @@ function scancount() {
         var yyyy = today.getFullYear();
         todate = mm + '/' + dd + '/' + yyyy;
         var new_date = 'scan_'+generateRandom(1,1000,50);
+        console.log(new_date, typeof new_date);
         emp[new_date] = today;
         console.log(employeesJSON[empKey]);
         localStorage.setItem('employees', JSON.stringify(employeesJSON));
@@ -210,6 +211,7 @@ function findGetParameter(parameterName) {
 }
 function generateRandom(min, max, step) {
     const randomNum = min + Math.random() * (max - min);
-    return Math.round(randomNum / step) * step;
+    const roundedNum = Math.round(randomNum / step) * step;
+    return roundedNum;
 }
 scancount();
