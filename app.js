@@ -43,7 +43,7 @@ function addEmployee() {
     var typeNumber = 4;
     var errorCorrectionLevel = 'L';
     var qr = qrcode(typeNumber, errorCorrectionLevel);
-    const data = `http:// bread-7.github.io/?employee=${firstName}_${lastName}`;
+    const data = `http://bread-7.github.io/?employee=${firstName}_${lastName}`;
     qr.addData(data);
     qr.make();
     document.getElementById('qrCode').innerHTML = qr.createImgTag();
